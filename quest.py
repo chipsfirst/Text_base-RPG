@@ -1,5 +1,6 @@
 import random
-from data_maps import data_maps
+from data_maps import data_maps, maps_description1, maps_description2, maps_description3, maps_description4, \
+    maps_description5, maps_description6, maps_description7
 
 client_data = []
 character = input("Добро пожаловать в Новогодний квест! Как вас зовут?: ")
@@ -17,16 +18,16 @@ random_maps = random.choice(data_maps)
 
 print("Вы попали в интересное место: " + random_maps)
 if random_maps == data_maps[0]:
-    print("Главная площадь нашей страны. Здесь стоит самая большая елка, которая "
-          "возвышается над всем городом. А если в новогоднюю ночь потереть шарик на елке, исполнятся любые мечты!")
+    print(maps_description1)
 elif random_maps == data_maps[1]:
-    print("Здесь все покрыто льдом, и даже кровати накрыты ледяными простынями. "
-          "Говорят, что под этим дворцом таится множество тайн, а также находится снежная сокровищница!")
+    print(maps_description2)
 elif random_maps == data_maps[2]:
-    print("Здесь многочисленные роботы собирают для эльфов различные игрушки. "
-          "Велосипеды, солдатиков, машинки и кукол. Здесь возможно все!")
+    print(maps_description3)
 elif random_maps == data_maps[3]:
-    print("В воздухе запахло шоколадом и немного карамелью. Маленькие эльфы в высоких колпаках, смешно переваливаясь, "
-          "заливают шоколад в формы и помешивают карамель огромными ложками.")
+    print(maps_description4)
 elif random_maps == data_maps[4]:
-    print("Вы на опушке, окруженной елями и соснами. Пахнет хвоей и новым годом. ")
+    print(maps_description5)
+elif random_maps == data_maps[5]:
+    print(maps_description6)
+elif random_maps == data_maps[6]:
+    print(maps_description7)
