@@ -1,33 +1,25 @@
 import random
-from data_maps import data_maps, maps_description1, maps_description2, maps_description3, maps_description4, \
-    maps_description5, maps_description6, maps_description7
+import colorama
+from colorama import Fore, Back, Style
+from data_maps import data_maps
+colorama.init()
+
 
 client_data = []
-character = input("Добро пожаловать в Новогодний квест! Как вас зовут?: ")
+steps = []
+character = input(Fore.BLUE+"Добро пожаловать в Новогодний квест! Как вас зовут?: ")
 client_data.append(character)
 location = input("Откуда вы к нам?: ")
 client_data.append(location)
-print("-------------------------------------------------------------")
-input('Отличные новости, ' + client_data[0] + '! Двери нашей резиденции откроются совсем скоро. '
-                                                    'Хотите посмотреть карту?:')
+print("------------------------------------------------------------------------------------")
+question1 = input('Отличные новости, ' + client_data[0] + '! Двери нашей резиденции откроются совсем скоро. '
+                                                    'Хотите посмотреть карту?:').title()
+if question1 == "Да":
+    delimiter = ", \n"
+    output = delimiter.join(data_maps)
+    print(output)
+    print()
+    print("**********************************************************************************************")
+else:
+    print("Попробуйте еще раз!")
 
-input("К сожалению, волшебные двери неконтролируемо открываются каждый раз в новом месте. Открывайте! "
-            "Просто напишите слово (открыть)")
-
-random_maps = random.choice(data_maps)
-
-print("Вы попали в интересное место: " + random_maps)
-if random_maps == data_maps[0]:
-    print(maps_description1)
-elif random_maps == data_maps[1]:
-    print(maps_description2)
-elif random_maps == data_maps[2]:
-    print(maps_description3)
-elif random_maps == data_maps[3]:
-    print(maps_description4)
-elif random_maps == data_maps[4]:
-    print(maps_description5)
-elif random_maps == data_maps[5]:
-    print(maps_description6)
-elif random_maps == data_maps[6]:
-    print(maps_description7)
