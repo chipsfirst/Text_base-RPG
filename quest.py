@@ -1,9 +1,9 @@
-import random
 import colorama
-from colorama import Fore, Back, Style
-from data_maps import data_locations
-colorama.init(autoreset=True)
+from colorama import Fore, Back
 
+from data_maps import data_locations
+
+colorama.init(autoreset=True)
 
 client_data = []
 steps = []
@@ -12,9 +12,10 @@ client_data.append(character)
 location = input(f"{Back.BLUE + Fore.BLACK}Откуда вы к нам?:")
 client_data.append(location)
 print("------------------------------------------------------------------------------------")
-question1 = input(f'{Back.WHITE + Fore.BLACK}Отличные новости, ' + client_data[0] + '! Двери нашей резиденции откроются '
-                                                                                    'совсем скоро. '
-                                                    'Хотите посмотреть карту?:').title()
+question1 = input(
+    f'{Back.WHITE + Fore.BLACK}Отличные новости, ' + client_data[0] + '! Двери нашей резиденции откроются '
+                                                                      'совсем скоро. '
+                                                                      'Хотите посмотреть карту?:').title()
 if question1 == "Да":
     delimiter = ", \n"
     output = delimiter.join(data_locations)
@@ -26,25 +27,23 @@ else:
 
 change_loc = input("Куда хотите отправиться?:").title()
 if change_loc in data_locations:
+    if change_loc != data_locations:
+        print(f"{Fore.WHITE + Back.RED}Попробуйте еще разок!")
     if change_loc == "Снежная площадь":
-        print(f"{Fore.WHITE + Back.BLUE}Главная площадь нашей страны. Здесь стоит самая большая елка, которая возвышается над всем "
+        print(f"{Fore.WHITE + Back.BLUE} "
               "городом. А если в новогоднюю ночь потереть шарик на елке, исполнятся любые мечты!")
     elif change_loc == "Ледяной дворец":
-        print(f"{Fore.WHITE + Back.BLUE}Здесь все покрыто льдом, и даже кровати накрыты ледяными простынями. "
-              "Говорят, что под этим дворцом таится множество тайн, а также находится снежная сокровищница!")
+        print(f"{Fore.WHITE + Back.BLUE})
     elif change_loc == "Фабрика игрушек":
-        print(f"{Fore.WHITE + Back.BLUE}Здесь многочисленные роботы собирают для эльфов различные игрушки. "
-              "Велосипеды, солдатиков, машинки и кукол. Здесь возможно все!")
+        print(f"{Fore.WHITE + Back.BLUE}")
     elif change_loc == "Конфетный двор":
-        print(f"{Fore.WHITE + Back.BLUE}В воздухе запахло шоколадом и немного карамелью. Маленькие эльфы в высоких колпаках, "
-              "смешно переваливаясь, заливают шоколад в формы и помешивают карамель огромными ложками.")
+        print(f"{Fore.WHITE + Back.BLUE}")
     elif change_loc == "Еловые поля":
-        print(f"{Fore.WHITE + Back.BLUE}Вы на опушке, окруженной елями и соснами. Пахнет хвоей и новым годом.")
+        print(f"{Fore.WHITE + Back.BLUE}")
     elif change_loc == "Аттракционы Снеговиков":
-        print(f"{Fore.WHITE + Back.BLUE}Мимо вас пролетает снеговик на коньках.")
+        print(f"{Fore.WHITE + Back.BLUE}")
     elif change_loc == "Снежковый Тир":
-        print(f"{Fore.WHITE + Back.BLUE}Едва открыв глаза, вы обнаруживаете себя посреди поля боя. Вокруг вас летают снежки, и вы "
-              "устремляетесь к ближайшей снежной крепости!")
+        print(f"{Fore.WHITE + Back.BLUE}")
     else:
         print(f"{Fore.WHITE + Back.RED}Попробуйте еще разок!")
 
