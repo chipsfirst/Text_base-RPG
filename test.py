@@ -12,7 +12,12 @@ class Character:
         self.location = location
 
 
-char = Character(input("Введите ваше имя: "), input("Введите ваш возраст: "), input("Введите ваше местоположение: "))
+char = Character(input("Введите ваше имя: "), input("Введите год вашего рождения: "), input("Введите ваше местоположение: "))
+
+
+password = bin(int(char.age))
+
+
 print(f"{Back.GREEN + Fore.BLACK}Добро пожаловать в сны, " + char.name + ". Запомни этот день!")
 
 
@@ -31,11 +36,47 @@ maps_6 = Location("Аттракционы Снеговиков", data_maps.data_
 maps_7 = Location("Снежковый Тир", data_maps.data_locations[6])
 
 
+class Interactive:
+    def __init__(self, active1, active2, active3, active4):
+        self.active1 = active1
+        self.active2 = active2
+        self.active3 = active3
+        self.active4 = active4
+
+
+active_maps_1 = Interactive("1. Исследовать", "2. Отдохнуть", "3. Читать записи", "4. Купить сувенир")
+
+
+class Active(Interactive):
+    def active_1(self):
+        print("Вы осматриваетесь. Видите огромные ледяные поверхности, богато украшенные здания и различные магазины.")
+    def active_2(self):
+        print("Решив отдохнуть, вы присаживаетесь на скамейку и достаете термос с чаем.")
+    def active_3(self):
+        print("Открыв свой блокнот, вы начинаете кропотливо описывать все что видите.")
+    def active_4(self):
+        print("Увидев ближайший магазинчик, вы отправляетесь туда в поисках сувениров.")
+
+
 print("Выбери, что делать дальше?")
 print("1. Осмотреться")
 print("2. Идти дальше!")
 choose = input("Введите число: ")
 if choose == "1":
-    print("You inter")
+    print("Вы попали на локацию ", maps_1.map_name)
+    print("Выбери что будешь делать? ")
+    print(active_maps_1.active1)
+    print(active_maps_1.active2)
+    print(active_maps_1.active3)
+    print(active_maps_1.active4)
+    choose2 = input("Что будешь делать?: ")
+    if choose2 == "1":
+        Active.active_1("1")
+    elif choose2 == "2":
+        Active.active_2("2")
+    elif choose2 == "3":
+        Active.active_3("3")
+    elif choose2 == "4":
+        Active.active_4("4")
 elif choose == "2":
-    print("Hoy")
+    print("Открыв двери, вы отправляетесь в", maps_2.map_name)
