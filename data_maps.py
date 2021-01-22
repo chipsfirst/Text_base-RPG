@@ -11,3 +11,18 @@ data_locations = ["Главная площадь нашей страны. Зде
                   "Едва открыв глаза, вы обнаруживаете себя посреди поля боя. Вокруг вас летают снежки, и вы "
                   "устремляетесь к ближайшей снежной крепости!",
                   ]
+
+
+class Location:
+    def __init__(self, map_name, map_description):
+        self.map_name = map_name
+        self.map_description = map_description
+
+
+maps_1 = Location("Снежная площадь", data_locations[0])
+maps_2 = Location("Ледяной дворец", data_locations[1])
+maps_3 = Location("Фабрика игрушек", data_locations[2])
+maps_4 = Location("Конфетный двор", data_locations[3])
+maps_5 = Location("Еловые поля", data_locations[4])
+maps_6 = Location("Аттракционы Снеговиков", data_locations[5])
+maps_7 = Location("Снежковый Тир", data_locations[6])
