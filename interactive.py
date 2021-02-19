@@ -1,3 +1,5 @@
+import data_maps
+
 class Interactive:
     def __init__(self, active1, active2, active3, active4):
         self.active1 = active1
