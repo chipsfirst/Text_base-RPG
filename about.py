@@ -1,5 +1,6 @@
 import sys, os, time
 
+
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)

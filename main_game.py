@@ -1,7 +1,6 @@
 import colorama
 from colorama import Fore, Back
 import Character
-from locations import map_1
 import os, sys
 
 colorama.init(autoreset=True)
@@ -38,9 +37,7 @@ print_slow("Это камень-указатель. На нем четыре с�
 time.sleep(5)
 path = input("Выбери направление, введя цифру: ")
 if path == "1":
-    print_slow(map_1.name + "\n")
-    print(f"{Back.GREEN + Fore.BLACK}****************************************************************************")
-    print_slow(map_1.description)
+    import locations.map_1
 if path == "2":
     print_slow(map_1.name + "\n")
     print(f"{Back.GREEN + Fore.BLACK}****************************************************************************")
