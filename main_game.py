@@ -148,11 +148,17 @@ for player_class in classplayer:
     elif player_class == "6":
         Player.game_class.append("бард")
         Character_Point.charisma += 2
+        Player.inventory.append("Лютня")
+        Player.inventory.append("Плащ")
+        Player.armory.append("Легкий доспех")
+        Player.weapon.append("Рапира")
+        Player.attack += 3
         print("Вы " + str(*Player.game_class) + ", и получаете бонус к харизме. Теперь значение вашей "
                                                 "харизмы равно " + str(Character_Point.charisma) + ".")
+        print(str(*Player.game_class), str(*Player.weapon),str(*Player.armory),
+                  str(Player.inventory[0]),str(Player.inventory[1]))
     else:
         print("Вы ввели неверный номер.")
         player_class = classplayer.append(input("Введите номер выбранного класса: "))
 
 
-print(Player.name + ", прежде чем отправляться в бой, нужно выбрать себе экипировку.")
