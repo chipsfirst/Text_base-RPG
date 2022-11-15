@@ -62,8 +62,8 @@ choose_race = print("Выберите расу своего персонажа.\
                      "2) Дварф\n"
                      "3) Эльф.\n"
                      "4) Полурослик.\n"
-                     "5) Гном\n"
-                     "6) Тифлинг. \n")
+                     "5) Тифлинг\n"
+                     "6) Гном. \n")
 choose = []
 player_race = choose.append(input("Введите номер выбранной расы или напишите 'Выход': "))
 for player_race in choose:
@@ -148,17 +148,22 @@ for player_class in classplayer:
     elif player_class == "6":
         Player.game_class.append("бард")
         Character_Point.charisma += 2
-        Player.inventory.append("Лютня")
-        Player.inventory.append("Плащ")
-        Player.armory.append("Легкий доспех")
-        Player.weapon.append("Рапира")
-        Player.attack += 3
         print("Вы " + str(*Player.game_class) + ", и получаете бонус к харизме. Теперь значение вашей "
                                                 "харизмы равно " + str(Character_Point.charisma) + ".")
-        print(str(*Player.game_class), str(*Player.weapon),str(*Player.armory),
-                  str(Player.inventory[0]),str(Player.inventory[1]))
     else:
         print("Вы ввели неверный номер.")
         player_class = classplayer.append(input("Введите номер выбранного класса: "))
 
+
+def Char_Asset():
+    print("Вас зовут " + str(Player.name) + ". Вы -" + str(*Player.race) + " класса " + str(*Player.game_class) + ".")
+    print("Сила равна " + str(Character_Point.strange) + ".")
+    print("Ловкость равна " + str(Character_Point.dexterity) + ".")
+    print("Телосложение равно " + str(Character_Point.constitution) + ".")
+    print("Мудрость равна " + str(Character_Point.wisdom) + ".")
+    print("Интеллект равен " + str(Character_Point.intelligence) + ".")
+    print("Харизма равна " + str(Character_Point.charisma) + ".")
+    return("Удачного путешествия!")
+
+print(Char_Asset())
 
